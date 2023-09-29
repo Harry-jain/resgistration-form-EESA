@@ -3,309 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Borel&display=swap");
-      * {
-        background-color: rgb(39, 7, 72);
-      }
-
-      .orb-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: -1;
-      }
-
-      .container {
-        margin-top: 25vh;
-        margin-bottom: 50vh;
-      }
-
-      .stack {
-        align-items: center;
-        width: 430px;
-        height: 300px;
-        background: lightgray;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10vh;
-        position: sticky;
-        border-radius: 14px;
-      }
-
-      .stack-1 {
-        display: flex;
-        justify-content: center;
-        top: 15vh;
-        background: rgba(28 8 8 / 38%);
-        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
-      }
-      .stackd {
-        display: flex;
-        justify-content: center;
-        top: 15vh;
-        background-color: black;
-        background: rgba(28, 8, 8, 0.496);
-        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
-      }
-
-      .stack-2 {
-        display: flex;
-        justify-content: center;
-        top: 15vh;
-        background: rgba(28, 8, 8, 0.548);
-        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
-      }
-
-      .stack-3 {
-        display: flex;
-        justify-content: center;
-        top: 19vh;
-        background: rgba(28 8 8 / 38%);
-        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
-      }
-
-      .stack-4 {
-        display: flex;
-        justify-content: center;
-        top: 25vh;
-        background: rgba(28 8 8 / 38%);
-        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
-      }
-      .stackd-4 {
-        display: flex;
-        justify-content: center;
-        top: 25vh;
-        background: rgba(255, 255, 255, 0.375);
-        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
-      }
-      .up1 {
-        height: 285px;
-        width: 600px;
-        border-radius: 14px;
-        margin-bottom: 0px;
-        background-color: aquamarine;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-
-      .up2 {
-        height: 285px;
-        width: 600px;
-        border-radius: 14px;
-        margin-bottom: 0px;
-        background-color: rgb(181, 117, 204);
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-
-      .up3 {
-        height: 285px;
-        width: 600px;
-        border-radius: 14px;
-        margin-bottom: 0px;
-        background-color: rgb(147, 94, 213);
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-
-      .up4 {
-        height: 285px;
-        width: 600px;
-        border-radius: 14px;
-        margin-bottom: 0px;
-        background-color: rgb(82, 194, 190);
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-
-      .up1 img {
-        height: 190px;
-        width: 342px;
-        border-radius: 14px;
-        transform: rotate(10deg);
-      }
-
-      .up2 img {
-        height: 190px;
-        width: 342px;
-        border-radius: 14px;
-        transform: rotate(-10deg);
-      }
-
-      .up3 img {
-        height: 190px;
-        width: 342px;
-        border-radius: 14px;
-      }
-      .up3 .m1 {
-        height: 206px;
-        width: 153px;
-        margin-top: 21px;
-        margin-right: 16px;
-
-        transform: rotate(10deg);
-      }
-
-      .up3 .m2 {
-        height: 206px;
-        width: 153px;
-        margin-bottom: 21px;
-        margin-left: 12px;
-        transform: rotate(-10deg);
-      }
-      .up4 .m3my {
-        height: 242px;
-        width: 155px;
-        margin-left: 45px;
-        border-radius: 14px;
-      }
-      .up4 .m3my img {
-        height: 242px;
-        width: 155px;
-        border-radius: 14px;
-      }
-      .up4 .textm {
-        background-color: rgb(82, 194, 190);
-        font-family: "Borel", cursive;
-        margin-left: 10px;
-      }
-
-      .hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 10px;
-        color: wheat;
-        width: 430px;
-        font-family: "Borel", cursive;
-        font-size: 25px;
-        padding: 0px;
-      }
-      .hero h4 {
-        font-family: "Borel", cursive;
-        font-size: larger;
-      }
-      .hero2 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: wheat;
-        width: 430px;
-        padding: 0px;
-        font-family: "Borel", cursive;
-        font-size: 30px;
-        font-weight: 500;
-      }
-      .stackd p {
-        color: wheat;
-        background-color: rgba(255, 228, 196, 0);
-        font-size: 35px;
-        font-family: "Borel", cursive;
-      }
-      .stackd {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .stackdf {
-        display: flex;
-        justify-content: center;
-        top: 15vh;
-        background-color: rgba(15, 121, 66, 0.63);
-        background: rgb(26, 120, 15);
-        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
-      }
-      .stackdf p {
-        color: wheat;
-        background-color: rgba(255, 228, 196, 0);
-        margin-left: 3px;
-        font-size: 30px;
-        font-family: "Borel", cursive;
-      }
-      .stackdf {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .empty {
-        height: 370px;
-        width: 100%;
-      }
-    </style>
-    <title>happy birthday Maitri!!!!</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>✨EESA - registration form.✨</title>
   </head>
   <body>
-    <div class="hero">
-      <h4>OYYYYYEEEE M3!!!</h4>
-    </div>
-    <div class="hero2">
-      <h3>Scroll kar zara!!!!</h3>
-    </div>
-    <div class="empty"></div>
-    <div class="container">
-      <div class="stack stack-1">
-        <div class="up1">
-          <img src="assets/1m3.jpg" alt="" srcset="" />
-        </div>
-        <div class="down"></div>
-      </div>
-      <div class="stack stackd">
-        <p>oyyyyyyyye tera happy birthday hai!!!!🥳💕</p>
+    <form id="survey-form" action="https://docs.google.com/forms/d/e/1FAIpQLScWI6uP3Hk-V9lmRImK5d8Aqi8gtjJc1g-urmBOVruhzGOsVg/formResponse" method="post">
+      <h2>✨EESA event registration form✨</h2>
+      <h3>We are excited to invite you for a online webinar of EESA.</h3>
+      <div class="input-wrap">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Type your Name here."
+          required
+          name="entry.1602984572"
+        />
+        <span class="clear">x</span>
       </div>
 
-      <div class="stack stack-2">
-        <div class="up2">
-          <img src="assets/2m3.jpg" alt="" srcset="" />
-        </div>
-        <div class="down"></div>
+      <div class="input-wrap">
+        <label for="email">Email (vit)</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="mail@vit.edu.com"
+          required
+          name="entry.1271730552"
+        />
+        <span class="clear">x</span>
       </div>
 
-      <div class="stack stackd">
-        <p>Party kaha hai be?!?!😕😕</p>
+      <div class="input-wrap">
+        <label for="branch">Branch</label>
+        <input
+          type="text"
+          id="branch"
+          placeholder="CMPN,INFT,ExCS,ETRX,EXTC,BIOM."
+          required
+          name="entry.429623076"
+        />
+        <span class="clear">x</span>
       </div>
 
-      <div class="stack stack-3">
-        <div class="up3">
-          <img class="m1" src="assets/3m3.jpg" alt="" srcset="" />
-          <img class="m2" src="assets/4m3.jpg" alt="" srcset="" />
-        </div>
-        <div class="down"></div>
+      <div class="input-wrap">
+        <label for="year">year</label>
+        <input type="text" id="year" placeholder="FE,SE,TE,BE." required name="entry.772382642"/>
+        <span class="clear">x</span>
       </div>
 
-      <div class="stack stackd">
-        <p>I am happy to have a friend like you!😁💕</p>
+        <span class="clear">x</span>
       </div>
 
-      <div class="stack stack-4">
-        <div class="up4">
-          <div class="m3my">
-            <img src="assets/5m3.jpg" alt="" srcset="" />
-          </div>
-          <div class="textm">He was like "Bhai please jaane de mujhe🥲🥲"</div>
-        </div>
-        <div class="down"></div>
+      <div class="input-wrap">
+        <label for="contact">Contact (not compulsory)</label>
+        <input
+          type="number"
+          id="contact"
+          name="entry.1749033730"
+          placeholder="Your Number (Not compulsory)."
+        />
+        <span class="clear">x</span>
       </div>
 
-      <div class="stack stackd">
-        <p>It took me hours to make...🥲🥲</p>
-      </div>
-
-      <div class="stack stackdf">
-        <p>If you want me to make one for you.....</p>
-      </div>
-
-      <div class="stack stackdf">
-        <p>You know where to find me.</p>
-      </div>
-    </div>
+      <input type="submit" id="submit" value="Submit" />
+    </form>
+    <script src="script.js"></script>
   </body>
 </html>
